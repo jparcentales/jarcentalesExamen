@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jarcentalesExamen.Views.LoginPage"
+             Title="Inicio de sesión">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="18">
+            <Image Source="logo.png"
+                   HeightRequest="140"
+                   WidthRequest="240"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <Label Text="INICIO DE SESIÓN"
+                   Style="{StaticResource PageTitleStyle}"
+                   TextColor="Red"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Grid ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="12"
+                  RowSpacing="14">
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Usuario:"
+                       VerticalOptions="Center" />
+                <Entry x:Name="UsuarioEntry"
+                       Grid.Row="0" Grid.Column="1"
+                       Placeholder="Ingrese el usuario"
+                       ReturnType="Next" />
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Contraseña:"
+                       VerticalOptions="Center" />
+                <Entry x:Name="ContrasenaEntry"
+                       Grid.Row="1" Grid.Column="1"
+                       Placeholder="Ingrese la contraseña"
+                       IsPassword="True"
+                       ReturnType="Done" />
+            </Grid>
+
+            <Button Text="Iniciar Sesión"
+                    Clicked="OnIniciarSesionClicked"
+                    HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

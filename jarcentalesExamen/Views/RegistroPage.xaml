@@ -1,0 +1,81 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jarcentalesExamen.Views.RegistroPage"
+             Title="REGISTRO">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14">
+            <Label x:Name="UsuarioConectadoLabel"
+                   Text="Usuario conectado:"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label Text="REGISTRO"
+                   Style="{StaticResource PageTitleStyle}"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Grid ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  ColumnSpacing="10"
+                  RowSpacing="10">
+                <Label Grid.Row="0" Grid.Column="0" Text="Fecha:" VerticalOptions="Center" />
+                <DatePicker x:Name="FechaPicker" Grid.Row="0" Grid.Column="1" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="País:" VerticalOptions="Center" />
+                <Picker x:Name="PaisPicker" Grid.Row="1" Grid.Column="1" Title="Seleccione un país">
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Perú</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Ciudad:" VerticalOptions="Center" />
+                <Picker x:Name="CiudadPicker" Grid.Row="2" Grid.Column="1" Title="Seleccione una ciudad">
+                    <Picker.Items>
+                        <x:String>Cuenca</x:String>
+                        <x:String>Quito</x:String>
+                        <x:String>Guayaquil</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Monto Inicial:" VerticalOptions="Center" />
+                <Entry x:Name="MontoInicialEntry"
+                       Grid.Row="3" Grid.Column="1"
+                       Placeholder="0.00"
+                       Keyboard="Numeric" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Pago mensual:" VerticalOptions="Center" />
+                <Entry x:Name="PagoMensualEntry"
+                       Grid.Row="4" Grid.Column="1"
+                       IsReadOnly="True"
+                       Placeholder="Calcule el pago mensual" />
+            </Grid>
+
+            <Button Text="Calcular pago mensual"
+                    Clicked="OnCalcularPagoClicked" />
+
+            <Label Text="Datos del estudiante"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Grid ColumnDefinitions="*,*,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="8"
+                  RowSpacing="6">
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre" HorizontalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Apellido" HorizontalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Edad" HorizontalOptions="Center" />
+
+                <Entry x:Name="NombreEntry" Grid.Row="1" Grid.Column="0" Placeholder="Nombre" />
+                <Entry x:Name="ApellidoEntry" Grid.Row="1" Grid.Column="1" Placeholder="Apellido" />
+                <Entry x:Name="EdadEntry" Grid.Row="1" Grid.Column="2" Placeholder="Edad" Keyboard="Numeric" />
+            </Grid>
+
+            <Button Text="Ver resumen"
+                    Clicked="OnVerResumenClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
